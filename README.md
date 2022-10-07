@@ -18,7 +18,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 * Basic knowledge of web development principals
 * [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/)
-* [.NET Core 2.1 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/3.1)
+* [.NET Core 3.1 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/3.1)
 * [ResX Manager (optional)](https://marketplace.visualstudio.com/items?itemName=TomEnglert.ResXManager)
 
 
