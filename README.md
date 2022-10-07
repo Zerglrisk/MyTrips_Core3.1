@@ -1,5 +1,5 @@
 # MyTrips - Basic Multi-Cultural Web Application
-Sample project for basic multi-cultural web application, built with ASP.NET Core 2.1.
+Sample project for basic multi-cultural web application, built with ASP.NET Core 3.1.
 
 ## [NEW 27.05.2019]
 I developed a new nuget package named [ExpressLocalization](https://github.com/LazZiya/ExpressLocalization) to simplify localization of Asp.Net Core web apps to one step, see samples below:
@@ -17,16 +17,17 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 
 * Basic knowledge of web development principals
-* [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/)
-* [.NET Core 2.1 SDK](https://www.microsoft.com/net/download/dotnet-core/2.1)
+* [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/)
+* [.NET Core 2.1 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/3.1)
 * [ResX Manager (optional)](https://marketplace.visualstudio.com/items?itemName=TomEnglert.ResXManager)
 
 
 ### Supported Cultures
 
+* English
+* Korean
 * Arabic
 * Arabic - Syria
-* English
 * Hindi
 * Persian
 * Spanish
@@ -40,8 +41,8 @@ These instructions will get you a copy of the project up and running on your loc
 
 ## Built With
 
-* [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/) - Web development env.
-* [.NET Core 2.1 SDK](https://www.microsoft.com/net/download/dotnet-core/2.1)
+* [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/) - Web development env.
+* [.NET Core 3.1 SDK](https://www.microsoft.com/net/download/dotnet-core/3.1)
 * [ResX Manager (optional)](https://marketplace.visualstudio.com/items?itemName=TomEnglert.ResXManager) - For managing localization resource files easily.
 * [Globalize](https://github.com/globalizejs/globalize) - For client side validation of numbers and dates
 * [jquery-validation-globalize](https://github.com/johnnyreilly/jquery-validation-globalize) - Enabling simple internationalized validation
