@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Localization;
 using MyTrips.Resources;
 using MyTrips.Utilities;
@@ -34,13 +35,13 @@ namespace MyTrips
 
             services.ConfigureRequestLocalization();
 
-            services.AddMvc()
-                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
-                .AddViewLocalization(o=>o.ResourcesPath = "Resources")
+            services.AddRazorPages()
+                .SetCompatibilityVersion(CompatibilityVersion.Version_3_0)
+                .AddViewLocalization(o => o.ResourcesPath = "Resources")
                 .AddModelBindingMessagesLocalizer(services)
-                
                 // Option A: use this for localization with shared resource
-                .AddDataAnnotationsLocalization(o=> {
+                .AddDataAnnotationsLocalization(o =>
+                {
                     var type = typeof(ViewResource);
                     var assemblyName = new AssemblyName(type.GetTypeInfo().Assembly.FullName);
                     var factory = services.BuildServiceProvider().GetService<IStringLocalizerFactory>();
@@ -50,13 +51,14 @@ namespace MyTrips
 
                 // Option B: use this for localization by view specific resource
                 //.AddDataAnnotationsLocalization() 
-                .AddRazorPagesOptions(o => {
+                .AddRazorPagesOptions(o =>
+                {
                     o.Conventions.Add(new CultureTemplateRouteModelConvention());
                 });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -71,9 +73,13 @@ namespace MyTrips
             app.UseRequestLocalization();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseRouting();
             app.UseCookiePolicy();
 
-            app.UseMvc();
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapRazorPages();
+            });
         }
     }
 }

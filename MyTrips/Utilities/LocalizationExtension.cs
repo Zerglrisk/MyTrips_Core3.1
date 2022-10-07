@@ -19,25 +19,27 @@ namespace MyTrips.Utilities
         {
             var cultures = new CultureInfo[]
             {
+                new CultureInfo("ko-kr"),
                 new CultureInfo("en"),
                 new CultureInfo("tr"),
                 new CultureInfo("es"),
                 new CultureInfo("fa"),
                 new CultureInfo("hi"),
                 new CultureInfo("ar-SY"),
-                new CultureInfo("ar") {
+                new CultureInfo("ar"){
                     
                     /* change calendar to Grgorian */
                     DateTimeFormat = { Calendar = new GregorianCalendar() },
 
                     /* change digit shape */
                     NumberFormat = { NativeDigits = "0 1 2 3 4 5 6 7 8 9".Split(" ") }
-                }
+                },
+                
             };
 
             services.Configure<RequestLocalizationOptions>(ops =>
             {
-                ops.DefaultRequestCulture = new RequestCulture("en");
+                ops.DefaultRequestCulture = new RequestCulture("ko-kr");
                 ops.SupportedCultures = cultures.OrderBy(x=>x.EnglishName).ToList();
                 ops.SupportedUICultures = cultures.OrderBy(x => x.EnglishName).ToList();
 
